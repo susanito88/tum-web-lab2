@@ -6,6 +6,7 @@
     <title>Molda - Moldovan Cuisine Restaurant for Special Events</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
   </head>
   <body>
     <!-- Navigation -->
@@ -13,37 +14,46 @@
       <div class="container">
         <div class="logo">Molda</div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" data-i18n="navHome">Home</a></li>
+          <li><a href="#about" data-i18n="navAbout">About</a></li>
+          <li><a href="#events" data-i18n="navEvents">Events</a></li>
+          <li><a href="#menu" data-i18n="navMenu">Menu</a></li>
+          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
+        <div class="language-selector">
+          <button class="lang-option active" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="ro">RO</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+        </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-content">
-        <h1>Celebrate Your Special Moments</h1>
-        <p>Authentic Moldovan Cuisine for Unforgettable Events</p>
-        <a href="#contact" class="cta-button">Book Your Event</a>
+        <h1 data-i18n="heroTitle">Celebrate Your Special Moments</h1>
+        <p data-i18n="heroSubtitle">
+          Authentic Moldovan Cuisine for Unforgettable Events
+        </p>
+        <a href="#contact" class="cta-button" data-i18n="heroButton"
+          >Book Your Event</a
+        >
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <h2>About Molda</h2>
+        <h2 data-i18n="aboutTitle">About Molda</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>
+            <p data-i18n="aboutText1">
               Welcome to Molda, where traditional Moldovan hospitality meets
               exceptional event planning. We specialize in hosting memorable
               celebrations - from intimate birthdays to grand weddings and
               corporate gatherings.
             </p>
-            <p>
+            <p data-i18n="aboutText2">
               Our spacious venue accommodates 20-100 guests, and our experienced
               team ensures every detail of your event is perfect. We bring the
               authentic flavors of Moldova to your celebration with traditional
@@ -57,33 +67,33 @@
     <!-- Events Section -->
     <section id="events" class="events">
       <div class="container">
-        <h2>Events We Host</h2>
+        <h2 data-i18n="eventsTitle">Events We Host</h2>
         <div class="events-grid">
           <div class="event-card">
-            <h3>Weddings</h3>
-            <p>
+            <h3 data-i18n="eventWedding">Weddings</h3>
+            <p data-i18n="eventWeddingDesc">
               Make your special day unforgettable with traditional Moldovan
               wedding celebrations, complete with authentic cuisine and festive
               atmosphere.
             </p>
           </div>
           <div class="event-card">
-            <h3>Birthdays</h3>
-            <p>
+            <h3 data-i18n="eventBirthday">Birthdays</h3>
+            <p data-i18n="eventBirthdayDesc">
               Celebrate another year with family and friends surrounded by the
               warmth of Moldovan hospitality and delicious homemade dishes.
             </p>
           </div>
           <div class="event-card">
-            <h3>Corporate Events</h3>
-            <p>
+            <h3 data-i18n="eventCorporate">Corporate Events</h3>
+            <p data-i18n="eventCorporateDesc">
               Host your company gatherings, team buildings, or business
               celebrations in our elegant and comfortable venue.
             </p>
           </div>
           <div class="event-card">
-            <h3>Anniversaries</h3>
-            <p>
+            <h3 data-i18n="eventAnniversary">Anniversaries</h3>
+            <p data-i18n="eventAnniversaryDesc">
               Mark your milestone moments with a sophisticated celebration
               featuring the best of Moldovan culinary traditions.
             </p>
@@ -95,33 +105,43 @@
     <!-- Menu Section -->
     <section id="menu" class="menu">
       <div class="container">
-        <h2>Traditional Menu Highlights</h2>
+        <h2 data-i18n="menuTitle">Traditional Menu Highlights</h2>
         <div class="menu-grid">
           <div class="menu-item">
             <h3>Mămăligă</h3>
-            <p>
+            <p data-i18n="menuMamaligaDesc">
               Traditional cornmeal porridge served with sour cream and cheese
             </p>
           </div>
           <div class="menu-item">
             <h3>Sarmale</h3>
-            <p>Cabbage rolls filled with seasoned meat and rice</p>
+            <p data-i18n="menuSarmaleDesc">
+              Cabbage rolls filled with seasoned meat and rice
+            </p>
           </div>
           <div class="menu-item">
             <h3>Plăcintă</h3>
-            <p>Savory and sweet pastries with various fillings</p>
+            <p data-i18n="menuPlacintaDesc">
+              Savory and sweet pastries with various fillings
+            </p>
           </div>
           <div class="menu-item">
             <h3>Mici</h3>
-            <p>Grilled ground meat rolls with traditional spices</p>
+            <p data-i18n="menuMiciDesc">
+              Grilled ground meat rolls with traditional spices
+            </p>
           </div>
           <div class="menu-item">
             <h3>Zeamă</h3>
-            <p>Traditional chicken soup with homemade noodles</p>
+            <p data-i18n="menuZeamaDesc">
+              Traditional chicken soup with homemade noodles
+            </p>
           </div>
           <div class="menu-item">
             <h3>Cozonac</h3>
-            <p>Sweet bread with walnuts or cocoa for special occasions</p>
+            <p data-i18n="menuCozonacDesc">
+              Sweet bread with walnuts or cocoa for special occasions
+            </p>
           </div>
         </div>
       </div>
@@ -130,43 +150,86 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Book Your Event</h2>
+        <h2 data-i18n="contactTitle">Book Your Event</h2>
         <div class="contact-content">
           <div class="contact-info">
-            <h3>Get in Touch</h3>
-            <p><strong>Phone:</strong> +373 (22) 123-456</p>
-            <p><strong>Email:</strong> events@molda.md</p>
+            <h3 data-i18n="contactSubtitle">Get in Touch</h3>
             <p>
-              <strong>Address:</strong> Strada Stefan cel Mare 123, Chișinău,
-              Moldova
+              <strong data-i18n="contactPhone">Phone:</strong> +373 (67) 115-555
             </p>
-            <p><strong>Capacity:</strong> 20-100 guests</p>
+            <p>
+              <strong data-i18n="contactEmail">Email:</strong> events@molda.md
+            </p>
+            <p>
+              <strong data-i18n="contactAddress">Address:</strong> Strada
+              Pandurilor 50, Chisinau, Moldova 2002
+            </p>
+            <p>
+              <strong data-i18n="contactCapacity">Capacity:</strong> 20-100
+              guests
+            </p>
+            <p>
+              <strong data-i18n="contactInstagram">Instagram:</strong>
+              <a
+                href="https://www.instagram.com/molda_restaurant"
+                target="_blank"
+                rel="noopener noreferrer"
+                >@molda_restaurant</a
+              >
+            </p>
           </div>
           <div class="contact-form">
             <form>
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <input type="tel" placeholder="Phone Number" required />
+              <input
+                type="text"
+                placeholder="Your Name"
+                data-i18n="formName"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                data-i18n="formEmail"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                data-i18n="formPhone"
+                required
+              />
               <select required>
-                <option value="">Event Type</option>
-                <option value="wedding">Wedding</option>
-                <option value="birthday">Birthday</option>
-                <option value="corporate">Corporate Event</option>
-                <option value="anniversary">Anniversary</option>
-                <option value="other">Other</option>
+                <option value="" data-i18n="formEventType">Event Type</option>
+                <option value="wedding" data-i18n="formEventWedding">
+                  Wedding
+                </option>
+                <option value="birthday" data-i18n="formEventBirthday">
+                  Birthday
+                </option>
+                <option value="corporate" data-i18n="formEventCorporate">
+                  Corporate Event
+                </option>
+                <option value="anniversary" data-i18n="formEventAnniversary">
+                  Anniversary
+                </option>
+                <option value="other" data-i18n="formEventOther">Other</option>
               </select>
               <input
                 type="number"
                 placeholder="Number of Guests"
+                data-i18n="formGuests"
                 min="20"
                 required
               />
               <textarea
                 placeholder="Tell us about your event..."
+                data-i18n="formMessage"
                 rows="4"
                 required
               ></textarea>
-              <button type="submit" class="cta-button">Send Request</button>
+              <button type="submit" class="cta-button" data-i18n="formButton">
+                Send Request
+              </button>
             </form>
           </div>
         </div>
@@ -177,10 +240,13 @@
     <footer class="footer">
       <div class="container">
         <p>
-          &copy; 2026 Molda Restaurant. Bringing Moldovan traditions to your
-          celebrations.
+          &copy; 2026 Molda Restaurant.
+          <span data-i18n="footerText"
+            >Bringing Moldovan traditions to your celebrations.</span
+          >
         </p>
       </div>
     </footer>
+    <script src="translations.js"></script>
   </body>
 </html>
