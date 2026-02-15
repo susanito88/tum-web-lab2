@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Molda - Moldovan Cuisine Restaurant for Special Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
@@ -44,9 +50,9 @@
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <h2 data-i18n="aboutTitle">About Molda</h2>
+        <h2 class="scroll-animate" data-i18n="aboutTitle">About Molda</h2>
         <div class="about-content">
-          <div class="about-text">
+          <div class="about-text scroll-animate">
             <p data-i18n="aboutText1">
               Welcome to Molda, where traditional Moldovan hospitality meets
               exceptional event planning. We specialize in hosting memorable
@@ -67,9 +73,9 @@
     <!-- Events Section -->
     <section id="events" class="events">
       <div class="container">
-        <h2 data-i18n="eventsTitle">Events We Host</h2>
+        <h2 class="scroll-animate" data-i18n="eventsTitle">Events We Host</h2>
         <div class="events-grid">
-          <div class="event-card">
+          <div class="event-card scroll-animate">
             <h3 data-i18n="eventWedding">Weddings</h3>
             <p data-i18n="eventWeddingDesc">
               Make your special day unforgettable with traditional Moldovan
@@ -77,21 +83,21 @@
               atmosphere.
             </p>
           </div>
-          <div class="event-card">
+          <div class="event-card scroll-animate">
             <h3 data-i18n="eventBirthday">Birthdays</h3>
             <p data-i18n="eventBirthdayDesc">
               Celebrate another year with family and friends surrounded by the
               warmth of Moldovan hospitality and delicious homemade dishes.
             </p>
           </div>
-          <div class="event-card">
+          <div class="event-card scroll-animate">
             <h3 data-i18n="eventCorporate">Corporate Events</h3>
             <p data-i18n="eventCorporateDesc">
               Host your company gatherings, team buildings, or business
               celebrations in our elegant and comfortable venue.
             </p>
           </div>
-          <div class="event-card">
+          <div class="event-card scroll-animate">
             <h3 data-i18n="eventAnniversary">Anniversaries</h3>
             <p data-i18n="eventAnniversaryDesc">
               Mark your milestone moments with a sophisticated celebration
@@ -105,21 +111,23 @@
     <!-- Menu Section -->
     <section id="menu" class="menu">
       <div class="container">
-        <h2 data-i18n="menuTitle">Traditional Menu Highlights</h2>
+        <h2 class="scroll-animate" data-i18n="menuTitle">
+          Traditional Menu Highlights
+        </h2>
         <div class="menu-grid">
-          <div class="menu-item">
+          <div class="menu-item scroll-slide-left">
             <h3>Mămăligă</h3>
             <p data-i18n="menuMamaligaDesc">
               Traditional cornmeal porridge served with sour cream and cheese
             </p>
           </div>
-          <div class="menu-item">
+          <div class="menu-item scroll-slide-right">
             <h3>Sarmale</h3>
             <p data-i18n="menuSarmaleDesc">
               Cabbage rolls filled with seasoned meat and rice
             </p>
           </div>
-          <div class="menu-item">
+          <div class="menu-item scroll-slide-left">
             <h3>Plăcintă</h3>
             <p data-i18n="menuPlacintaDesc">
               Savory and sweet pastries with various fillings
@@ -137,7 +145,7 @@
               Traditional chicken soup with homemade noodles
             </p>
           </div>
-          <div class="menu-item">
+          <div class="menu-item scroll-slide-right">
             <h3>Cozonac</h3>
             <p data-i18n="menuCozonacDesc">
               Sweet bread with walnuts or cocoa for special occasions
@@ -150,9 +158,9 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2 data-i18n="contactTitle">Book Your Event</h2>
+        <h2 class="scroll-animate" data-i18n="contactTitle">Book Your Event</h2>
         <div class="contact-content">
-          <div class="contact-info">
+          <div class="contact-info scroll-slide-left">
             <h3 data-i18n="contactSubtitle">Get in Touch</h3>
             <p>
               <strong data-i18n="contactPhone">Phone:</strong> +373 (67) 115-555
@@ -178,7 +186,7 @@
               >
             </p>
           </div>
-          <div class="contact-form">
+          <div class="contact-form scroll-slide-right">
             <form>
               <input
                 type="text"
@@ -247,6 +255,51 @@
         </p>
       </div>
     </footer>
+
+    <!-- Floating Action Button -->
+    <button
+      id="contactFloatingBtn"
+      class="floating-contact-btn"
+      aria-label="Contact"
+    >
+      <span class="btn-icon">✉</span>
+      <span class="btn-text">Contactează-ne</span>
+    </button>
+
     <script src="translations.js"></script>
+    <script>
+      // Floating contact button functionality
+      const contactBtn = document.getElementById("contactFloatingBtn");
+
+      contactBtn.addEventListener("click", () => {
+        document.getElementById("contact").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with scroll animation classes
+      document
+        .querySelectorAll(
+          ".scroll-animate, .scroll-fade, .scroll-slide-left, .scroll-slide-right",
+        )
+        .forEach((el) => {
+          observer.observe(el);
+        });
+    </script>
   </body>
 </html>
