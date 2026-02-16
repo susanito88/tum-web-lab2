@@ -52,15 +52,11 @@ This landing page showcases "Molda", a Moldovan restaurant that hosts special ev
 
 ### Desktop View - Hero Section
 
-![Hero Section](https://via.placeholder.com/800x400/8b0000/ffffff?text=Hero+Section+Screenshot)
+![Hero Section](1.png)
 
 ### Desktop View - Events Section
 
-![Events Section](https://via.placeholder.com/800x400/2c1810/ffffff?text=Events+Section+Screenshot)
-
-### Mobile View
-
-![Mobile View](https://via.placeholder.com/400x800/daa520/ffffff?text=Mobile+View+Screenshot)
+![Events Section](2.png)
 
 ## 📦 Project Structure
 
