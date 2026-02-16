@@ -346,7 +346,29 @@ body {
 /* Contact Section */
 .contact {
   padding: 5rem 0;
-  background-color: var(--light-color);
+  background: linear-gradient(135deg, #f5f5dc 0%, #e8dcc4 100%);
+  position: relative;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(218, 165, 32, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(139, 0, 0, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
 }
 
 .contact h2 {
@@ -354,6 +376,7 @@ body {
   text-align: center;
   margin-bottom: 3rem;
   color: var(--primary-color);
+  position: relative;
 }
 
 .contact-content {
@@ -362,18 +385,112 @@ body {
   gap: 3rem;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+}
+
+.contact-info {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .contact-info h3 {
   font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--primary-color);
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--secondary-color);
 }
 
-.contact-info p {
-  font-size: 1.1rem;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
   margin-bottom: 1rem;
+  border-radius: 12px;
+  transition: var(--transition);
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  border: 2px solid rgba(218, 165, 32, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #fff9f0 100%);
+  border-color: var(--secondary-color);
+  transform: translateX(8px);
+  box-shadow: 0 5px 15px rgba(218, 165, 32, 0.2);
+}
+
+.contact-icon {
+  font-size: 2.2rem;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(218, 165, 32, 0.15),
+    rgba(139, 0, 0, 0.1)
+  );
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-item > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact-item strong {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.contact-item p {
+  margin: 0;
   color: var(--dark-color);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.contact-item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.contact-item a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.contact-form:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .contact-form form {
@@ -387,10 +504,22 @@ body {
 .contact-form textarea {
   padding: 1rem;
   font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
   font-family: inherit;
   transition: var(--transition);
+  background-color: #fafafa;
+}
+
+.contact-form input:hover,
+.contact-form select:hover,
+.contact-form textarea:hover {
+  background-color: white;
+  border-color: var(--secondary-color);
+}
+
+.contact-form textarea {
+  resize: none;
 }
 
 .contact-form input:focus,
@@ -398,11 +527,19 @@ body {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
 }
 
 .contact-form button {
   justify-self: start;
   margin-top: 0.5rem;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+.contact-form button:hover {
+  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Footer */
