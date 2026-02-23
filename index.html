@@ -11,69 +11,192 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8b0000",
+              secondary: "#daa520",
+              dark: "#2c1810",
+              light: "#f5f5dc",
+            },
+            fontFamily: {
+              serif: ["Merriweather", "Georgia", "Times New Roman", "serif"],
+              script: ["Dancing Script", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
   </head>
-  <body>
+  <body class="font-serif text-dark bg-white">
     <!-- Navigation -->
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">Molda</div>
-        <ul class="nav-links">
-          <li><a href="#home" data-i18n="navHome">Home</a></li>
-          <li><a href="#about" data-i18n="navAbout">About</a></li>
-          <li><a href="#events" data-i18n="navEvents">Events</a></li>
-          <li><a href="#menu" data-i18n="navMenu">Menu</a></li>
-          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+    <nav class="fixed top-0 w-full bg-dark py-4 z-50 shadow-lg">
+      <div
+        class="max-w-7xl mx-auto px-5 flex flex-wrap justify-between items-center gap-4"
+      >
+        <div class="text-4xl font-bold text-secondary font-script">Molda</div>
+        <ul class="flex list-none gap-8 flex-wrap justify-center">
+          <li>
+            <a
+              href="#home"
+              data-i18n="navHome"
+              class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              data-i18n="navAbout"
+              class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#events"
+              data-i18n="navEvents"
+              class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary"
+              >Events</a
+            >
+          </li>
+          <li>
+            <a
+              href="#menu"
+              data-i18n="navMenu"
+              class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              data-i18n="navContact"
+              class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary"
+              >Contact</a
+            >
+          </li>
         </ul>
-        <div class="language-selector">
-          <button class="lang-option active" data-lang="en">EN</button>
-          <button class="lang-option" data-lang="ro">RO</button>
-          <button class="lang-option" data-lang="ru">RU</button>
+        <div class="flex gap-2 items-center">
+          <button
+            class="lang-option bg-transparent text-white border-2 border-secondary px-3 py-2 cursor-pointer text-sm font-semibold rounded transition-all duration-300 hover:bg-secondary hover:text-dark active"
+            data-lang="en"
+          >
+            EN
+          </button>
+          <button
+            class="lang-option bg-transparent text-white border-2 border-secondary px-3 py-2 cursor-pointer text-sm font-semibold rounded transition-all duration-300 hover:bg-secondary hover:text-dark"
+            data-lang="ro"
+          >
+            RO
+          </button>
+          <button
+            class="lang-option bg-transparent text-white border-2 border-secondary px-3 py-2 cursor-pointer text-sm font-semibold rounded transition-all duration-300 hover:bg-secondary hover:text-dark"
+            data-lang="ru"
+          >
+            RU
+          </button>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1 data-i18n="heroTitle">Celebrate Your Special Moments</h1>
-        <p data-i18n="heroSubtitle">
+    <section
+      id="home"
+      class="h-screen flex items-center justify-center text-center text-white mt-16 bg-cover bg-center md:bg-fixed"
+      style="
+        background:
+          linear-gradient(rgba(44, 24, 16, 0.65), rgba(44, 24, 16, 0.65)),
+          url(&quot;https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1920&auto=format&fit=crop&quot;);
+      "
+    >
+      <div class="px-4">
+        <h1
+          data-i18n="heroTitle"
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-secondary font-bold"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)"
+        >
+          Celebrate Your Special Moments
+        </h1>
+        <p
+          data-i18n="heroSubtitle"
+          class="text-xl sm:text-2xl md:text-3xl mb-8 text-light px-4"
+        >
           Authentic Moldovan Cuisine for Unforgettable Events
         </p>
-        <a href="#contact" class="cta-button" data-i18n="heroButton"
+        <a
+          href="#contact"
+          class="inline-block bg-primary text-white px-8 sm:px-10 py-3 sm:py-4 text-lg sm:text-xl no-underline rounded border-2 border-primary cursor-pointer font-bold transition-all duration-300 hover:bg-transparent hover:border-secondary hover:text-secondary hover:-translate-y-1"
+          data-i18n="heroButton"
           >Book Your Event</a
         >
       </div>
     </section>
 
     <!-- Mobile-Only Section -->
-    <section class="mobile-only-section">
-      <div class="container">
-        <h2>🍷 Moldova's Finest 🍇</h2>
-        <p>Experience authentic flavors on any device!</p>
-        <div class="mobile-feature-icons">
-          <div class="mobile-icon">📱 Mobile Friendly</div>
-          <div class="mobile-icon">🎉 Easy Booking</div>
-          <div class="mobile-icon">🍽️ Browse Menu</div>
+    <section
+      class="hidden md:hidden py-8 text-center text-white border-b-4 border-primary"
+      style="background: linear-gradient(135deg, #daa520, #c4941e)"
+    >
+      <div class="max-w-7xl mx-auto px-5">
+        <h2
+          class="text-3xl mb-2"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)"
+        >
+          🍷 Moldova's Finest 🍇
+        </h2>
+        <p class="text-lg mb-4 opacity-95">
+          Experience authentic flavors on any device!
+        </p>
+        <div class="flex justify-center gap-4 flex-wrap mt-4">
+          <div
+            class="bg-white/20 px-5 py-2 rounded-full text-sm font-semibold backdrop-blur-md border-2 border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1"
+          >
+            📱 Mobile Friendly
+          </div>
+          <div
+            class="bg-white/20 px-5 py-2 rounded-full text-sm font-semibold backdrop-blur-md border-2 border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1"
+          >
+            🎉 Easy Booking
+          </div>
+          <div
+            class="bg-white/20 px-5 py-2 rounded-full text-sm font-semibold backdrop-blur-md border-2 border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1"
+          >
+            🍽️ Browse Menu
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="scroll-animate" data-i18n="aboutTitle">About Molda</h2>
-        <div class="about-content">
-          <div class="about-text scroll-animate">
-            <p data-i18n="aboutText1">
+    <section id="about" class="py-20 bg-light">
+      <div class="max-w-7xl mx-auto px-5">
+        <h2
+          class="scroll-animate text-3xl sm:text-4xl md:text-5xl text-center mb-12 text-primary"
+          data-i18n="aboutTitle"
+        >
+          About Molda
+        </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="scroll-animate">
+            <p
+              data-i18n="aboutText1"
+              class="text-lg sm:text-xl mb-6 text-center text-dark leading-relaxed"
+            >
               Welcome to Molda, where traditional Moldovan hospitality meets
               exceptional event planning. We specialize in hosting memorable
               celebrations - from intimate birthdays to grand weddings and
               corporate gatherings.
             </p>
-            <p data-i18n="aboutText2">
+            <p
+              data-i18n="aboutText2"
+              class="text-lg sm:text-xl mb-6 text-center text-dark leading-relaxed"
+            >
               Our spacious venue accommodates 20-100 guests, and our experienced
               team ensures every detail of your event is perfect. We bring the
               authentic flavors of Moldova to your celebration with traditional
@@ -85,35 +208,68 @@
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="events">
-      <div class="container">
-        <h2 class="scroll-animate" data-i18n="eventsTitle">Events We Host</h2>
-        <div class="events-grid">
-          <div class="event-card scroll-animate">
-            <h3 data-i18n="eventWedding">Weddings</h3>
-            <p data-i18n="eventWeddingDesc">
+    <section id="events" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <h2
+          class="scroll-animate text-3xl sm:text-4xl md:text-5xl text-center mb-12 text-primary"
+          data-i18n="eventsTitle"
+        >
+          Events We Host
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          <div
+            class="event-card bg-light p-8 rounded-lg text-center transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-xl scroll-animate"
+          >
+            <h3 data-i18n="eventWedding" class="text-3xl mb-4 text-primary">
+              Weddings
+            </h3>
+            <p
+              data-i18n="eventWeddingDesc"
+              class="text-lg text-gray-600 leading-relaxed"
+            >
               Make your special day unforgettable with traditional Moldovan
               wedding celebrations, complete with authentic cuisine and festive
               atmosphere.
             </p>
           </div>
-          <div class="event-card scroll-animate">
-            <h3 data-i18n="eventBirthday">Birthdays</h3>
-            <p data-i18n="eventBirthdayDesc">
+          <div
+            class="event-card bg-light p-8 rounded-lg text-center transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-xl scroll-animate"
+          >
+            <h3 data-i18n="eventBirthday" class="text-3xl mb-4 text-primary">
+              Birthdays
+            </h3>
+            <p
+              data-i18n="eventBirthdayDesc"
+              class="text-lg text-gray-600 leading-relaxed"
+            >
               Celebrate another year with family and friends surrounded by the
               warmth of Moldovan hospitality and delicious homemade dishes.
             </p>
           </div>
-          <div class="event-card scroll-animate">
-            <h3 data-i18n="eventCorporate">Corporate Events</h3>
-            <p data-i18n="eventCorporateDesc">
+          <div
+            class="event-card bg-light p-8 rounded-lg text-center transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-xl scroll-animate"
+          >
+            <h3 data-i18n="eventCorporate" class="text-3xl mb-4 text-primary">
+              Corporate Events
+            </h3>
+            <p
+              data-i18n="eventCorporateDesc"
+              class="text-lg text-gray-600 leading-relaxed"
+            >
               Host your company gatherings, team buildings, or business
               celebrations in our elegant and comfortable venue.
             </p>
           </div>
-          <div class="event-card scroll-animate">
-            <h3 data-i18n="eventAnniversary">Anniversaries</h3>
-            <p data-i18n="eventAnniversaryDesc">
+          <div
+            class="event-card bg-light p-8 rounded-lg text-center transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-xl scroll-animate"
+          >
+            <h3 data-i18n="eventAnniversary" class="text-3xl mb-4 text-primary">
+              Anniversaries
+            </h3>
+            <p
+              data-i18n="eventAnniversaryDesc"
+              class="text-lg text-gray-600 leading-relaxed"
+            >
               Mark your milestone moments with a sophisticated celebration
               featuring the best of Moldovan culinary traditions.
             </p>
@@ -123,45 +279,62 @@
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="menu">
-      <div class="container">
-        <h2 class="scroll-animate" data-i18n="menuTitle">
+    <section id="menu" class="py-20 bg-dark text-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <h2
+          class="scroll-animate text-3xl sm:text-4xl md:text-5xl text-center mb-12 text-secondary"
+          data-i18n="menuTitle"
+        >
           Traditional Menu Highlights
         </h2>
-        <div class="menu-grid">
-          <div class="menu-item scroll-slide-left">
-            <h3>Mămăligă</h3>
-            <p data-i18n="menuMamaligaDesc">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        >
+          <div
+            class="menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2 scroll-slide-left"
+          >
+            <h3 class="text-3xl mb-2 text-secondary">Mămăligă</h3>
+            <p data-i18n="menuMamaligaDesc" class="text-lg text-light">
               Traditional cornmeal porridge served with sour cream and cheese
             </p>
           </div>
-          <div class="menu-item scroll-slide-right">
-            <h3>Sarmale</h3>
-            <p data-i18n="menuSarmaleDesc">
+          <div
+            class="menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2 scroll-slide-right"
+          >
+            <h3 class="text-3xl mb-2 text-secondary">Sarmale</h3>
+            <p data-i18n="menuSarmaleDesc" class="text-lg text-light">
               Cabbage rolls filled with seasoned meat and rice
             </p>
           </div>
-          <div class="menu-item scroll-slide-left">
-            <h3>Plăcintă</h3>
-            <p data-i18n="menuPlacintaDesc">
+          <div
+            class="menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2 scroll-slide-left"
+          >
+            <h3 class="text-3xl mb-2 text-secondary">Plăcintă</h3>
+            <p data-i18n="menuPlacintaDesc" class="text-lg text-light">
               Savory and sweet pastries with various fillings
             </p>
           </div>
-          <div class="menu-item">
-            <h3>Mici</h3>
-            <p data-i18n="menuMiciDesc">
+          <div
+            class="menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2"
+          >
+            <h3 class="text-3xl mb-2 text-secondary">Mici</h3>
+            <p data-i18n="menuMiciDesc" class="text-lg text-light">
               Grilled ground meat rolls with traditional spices
             </p>
           </div>
-          <div class="menu-item">
-            <h3>Zeamă</h3>
-            <p data-i18n="menuZeamaDesc">
+          <div
+            class="menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2"
+          >
+            <h3 class="text-3xl mb-2 text-secondary">Zeamă</h3>
+            <p data-i18n="menuZeamaDesc" class="text-lg text-light">
               Traditional chicken soup with homemade noodles
             </p>
           </div>
-          <div class="menu-item scroll-slide-right">
-            <h3>Cozonac</h3>
-            <p data-i18n="menuCozonacDesc">
+          <div
+            class="menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2 scroll-slide-right"
+          >
+            <h3 class="text-3xl mb-2 text-secondary">Cozonac</h3>
+            <p data-i18n="menuCozonacDesc" class="text-lg text-light">
               Sweet bread with walnuts or cocoa for special occasions
             </p>
           </div>
@@ -170,76 +343,220 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="scroll-animate" data-i18n="contactTitle">Book Your Event</h2>
-        <div class="contact-content">
-          <div class="contact-info scroll-slide-left">
-            <h3 data-i18n="contactSubtitle">Get in Touch</h3>
-            <div class="contact-item">
-              <span class="contact-icon">📞</span>
-              <div>
-                <strong data-i18n="contactPhone">Phone:</strong>
-                <p>+373 (67) 115-555</p>
+    <section
+      id="contact"
+      class="py-20 relative"
+      style="background: linear-gradient(135deg, #f5f5dc 0%, #e8dcc4 100%)"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="
+          background-image:
+            radial-gradient(
+              circle at 20% 50%,
+              rgba(218, 165, 32, 0.05) 0%,
+              transparent 50%
+            ),
+            radial-gradient(
+              circle at 80% 80%,
+              rgba(139, 0, 0, 0.05) 0%,
+              transparent 50%
+            );
+        "
+      ></div>
+      <div class="max-w-7xl mx-auto px-5 relative">
+        <h2
+          class="scroll-animate text-5xl text-center mb-12 text-primary"
+          data-i18n="contactTitle"
+        >
+          Book Your Event
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div
+            class="scroll-slide-left bg-white p-10 rounded-3xl shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+          >
+            <h3
+              data-i18n="contactSubtitle"
+              class="text-3xl mb-8 text-primary text-center pb-4 border-b-4 border-secondary"
+            >
+              Get in Touch
+            </h3>
+            <div
+              class="flex items-center gap-5 p-5 mb-4 rounded-xl transition-all duration-300 border-2 border-secondary/20 shadow-sm hover:border-secondary hover:translate-x-2 hover:shadow-md"
+              style="
+                background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+              "
+            >
+              <span
+                class="text-4xl min-w-[50px] h-[50px] flex items-center justify-center rounded-full flex-shrink-0"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(218, 165, 32, 0.15),
+                    rgba(139, 0, 0, 0.1)
+                  );
+                "
+                >📞</span
+              >
+              <div class="flex-1">
+                <strong
+                  data-i18n="contactPhone"
+                  class="text-primary text-sm font-bold tracking-wider uppercase"
+                  >Phone:</strong
+                >
+                <p class="m-0 text-dark text-lg leading-relaxed font-medium">
+                  +373 (67) 115-555
+                </p>
               </div>
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">✉️</span>
-              <div>
-                <strong data-i18n="contactEmail">Email:</strong>
-                <p>events@molda.md</p>
+            <div
+              class="flex items-center gap-5 p-5 mb-4 rounded-xl transition-all duration-300 border-2 border-secondary/20 shadow-sm hover:border-secondary hover:translate-x-2 hover:shadow-md"
+              style="
+                background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+              "
+            >
+              <span
+                class="text-4xl min-w-[50px] h-[50px] flex items-center justify-center rounded-full flex-shrink-0"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(218, 165, 32, 0.15),
+                    rgba(139, 0, 0, 0.1)
+                  );
+                "
+                >✉️</span
+              >
+              <div class="flex-1">
+                <strong
+                  data-i18n="contactEmail"
+                  class="text-primary text-sm font-bold tracking-wider uppercase"
+                  >Email:</strong
+                >
+                <p class="m-0 text-dark text-lg leading-relaxed font-medium">
+                  events@molda.md
+                </p>
               </div>
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">📍</span>
-              <div>
-                <strong data-i18n="contactAddress">Address:</strong>
-                <p>Strada Pandurilor 50, Chisinau, Moldova 2002</p>
+            <div
+              class="flex items-center gap-5 p-5 mb-4 rounded-xl transition-all duration-300 border-2 border-secondary/20 shadow-sm hover:border-secondary hover:translate-x-2 hover:shadow-md"
+              style="
+                background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+              "
+            >
+              <span
+                class="text-4xl min-w-[50px] h-[50px] flex items-center justify-center rounded-full flex-shrink-0"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(218, 165, 32, 0.15),
+                    rgba(139, 0, 0, 0.1)
+                  );
+                "
+                >📍</span
+              >
+              <div class="flex-1">
+                <strong
+                  data-i18n="contactAddress"
+                  class="text-primary text-sm font-bold tracking-wider uppercase"
+                  >Address:</strong
+                >
+                <p class="m-0 text-dark text-lg leading-relaxed font-medium">
+                  Strada Pandurilor 50, Chisinau, Moldova 2002
+                </p>
               </div>
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">👥</span>
-              <div>
-                <strong data-i18n="contactCapacity">Capacity:</strong>
-                <p>20-100 guests</p>
+            <div
+              class="flex items-center gap-5 p-5 mb-4 rounded-xl transition-all duration-300 border-2 border-secondary/20 shadow-sm hover:border-secondary hover:translate-x-2 hover:shadow-md"
+              style="
+                background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+              "
+            >
+              <span
+                class="text-4xl min-w-[50px] h-[50px] flex items-center justify-center rounded-full flex-shrink-0"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(218, 165, 32, 0.15),
+                    rgba(139, 0, 0, 0.1)
+                  );
+                "
+                >👥</span
+              >
+              <div class="flex-1">
+                <strong
+                  data-i18n="contactCapacity"
+                  class="text-primary text-sm font-bold tracking-wider uppercase"
+                  >Capacity:</strong
+                >
+                <p class="m-0 text-dark text-lg leading-relaxed font-medium">
+                  20-100 guests
+                </p>
               </div>
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">📷</span>
-              <div>
-                <strong data-i18n="contactInstagram">Instagram:</strong>
-                <p>
+            <div
+              class="flex items-center gap-5 p-5 mb-4 rounded-xl transition-all duration-300 border-2 border-secondary/20 shadow-sm hover:border-secondary hover:translate-x-2 hover:shadow-md"
+              style="
+                background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+              "
+            >
+              <span
+                class="text-4xl min-w-[50px] h-[50px] flex items-center justify-center rounded-full flex-shrink-0"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(218, 165, 32, 0.15),
+                    rgba(139, 0, 0, 0.1)
+                  );
+                "
+                >📷</span
+              >
+              <div class="flex-1">
+                <strong
+                  data-i18n="contactInstagram"
+                  class="text-primary text-sm font-bold tracking-wider uppercase"
+                  >Instagram:</strong
+                >
+                <p class="m-0 text-dark text-lg leading-relaxed font-medium">
                   <a
                     href="https://www.instagram.com/molda_restaurant"
                     target="_blank"
                     rel="noopener noreferrer"
+                    class="text-secondary no-underline transition-all duration-300 font-semibold hover:text-primary hover:underline"
                     >@molda_restaurant</a
                   >
                 </p>
               </div>
             </div>
           </div>
-          <div class="contact-form scroll-slide-right">
-            <form>
+          <div
+            class="scroll-slide-right bg-white p-10 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl"
+          >
+            <form class="flex flex-col gap-4">
               <input
                 type="text"
                 placeholder="Your Name"
                 data-i18n="formName"
                 required
+                class="p-4 text-base border-2 border-gray-300 rounded-xl font-serif transition-all duration-300 bg-gray-50 hover:bg-white hover:border-secondary focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:ring-4 focus:ring-primary/10"
               />
               <input
                 type="email"
                 placeholder="Your Email"
                 data-i18n="formEmail"
                 required
+                class="p-4 text-base border-2 border-gray-300 rounded-xl font-serif transition-all duration-300 bg-gray-50 hover:bg-white hover:border-secondary focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:ring-4 focus:ring-primary/10"
               />
               <input
                 type="tel"
                 placeholder="Phone Number"
                 data-i18n="formPhone"
                 required
+                class="p-4 text-base border-2 border-gray-300 rounded-xl font-serif transition-all duration-300 bg-gray-50 hover:bg-white hover:border-secondary focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:ring-4 focus:ring-primary/10"
               />
-              <select required>
+              <select
+                required
+                class="p-4 text-base border-2 border-gray-300 rounded-xl font-serif transition-all duration-300 bg-gray-50 hover:bg-white hover:border-secondary focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:ring-4 focus:ring-primary/10"
+              >
                 <option value="" data-i18n="formEventType">Event Type</option>
                 <option value="wedding" data-i18n="formEventWedding">
                   Wedding
@@ -261,14 +578,20 @@
                 data-i18n="formGuests"
                 min="20"
                 required
+                class="p-4 text-base border-2 border-gray-300 rounded-xl font-serif transition-all duration-300 bg-gray-50 hover:bg-white hover:border-secondary focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:ring-4 focus:ring-primary/10"
               />
               <textarea
                 placeholder="Tell us about your event..."
                 data-i18n="formMessage"
                 rows="4"
                 required
+                class="p-4 text-base border-2 border-gray-300 rounded-xl font-serif transition-all duration-300 bg-gray-50 resize-none hover:bg-white hover:border-secondary focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:ring-4 focus:ring-primary/10"
               ></textarea>
-              <button type="submit" class="cta-button" data-i18n="formButton">
+              <button
+                type="submit"
+                class="inline-block bg-primary text-white px-10 py-4 text-xl no-underline rounded border-2 border-primary cursor-pointer font-bold transition-all duration-300 mt-2 hover:bg-transparent hover:border-secondary hover:text-secondary hover:-translate-y-1 shadow-xl hover:shadow-2xl"
+                data-i18n="formButton"
+              >
                 Send Request
               </button>
             </form>
@@ -278,9 +601,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>
+    <footer class="bg-dark text-white text-center py-8">
+      <div class="max-w-7xl mx-auto px-5">
+        <p class="text-base">
           &copy; 2026 Molda Restaurant.
           <span data-i18n="footerText"
             >Bringing Moldovan traditions to your celebrations.</span
@@ -292,18 +615,26 @@
     <!-- Floating Action Button -->
     <button
       id="contactFloatingBtn"
-      class="floating-contact-btn"
+      class="floating-contact-btn fixed bottom-8 right-8 px-6 py-4 text-white border-0 rounded-full text-base font-semibold cursor-pointer z-[999] flex items-center gap-3 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100"
+      style="
+        background: linear-gradient(135deg, #8b0000, #a31515);
+        box-shadow: 0 4px 20px rgba(139, 0, 0, 0.4);
+      "
       aria-label="Contact"
     >
-      <span class="btn-icon">✉</span>
-      <span class="btn-text">Contactează-ne</span>
+      <span class="text-2xl flex items-center">✉</span>
+      <span class="font-serif whitespace-nowrap">Contactează-ne</span>
     </button>
 
     <!-- Mascot -->
-    <div id="mascot" class="mascot">
-      <div class="mascot-inner">
+    <div
+      id="mascot"
+      class="mascot fixed bottom-32 right-8 w-32 h-32 z-[998] cursor-pointer opacity-0 translate-y-24 scale-50"
+    >
+      <div class="mascot-inner w-full h-full">
         <svg
-          class="mascot-svg"
+          class="mascot-svg w-full h-full"
+          style="filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3))"
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -482,7 +813,19 @@
           />
         </svg>
       </div>
-      <div class="mascot-tooltip">Click me!</div>
+      <div
+        class="mascot-tooltip absolute bottom-full right-0 text-white px-4 py-2 rounded-lg text-sm w-auto whitespace-nowrap opacity-0 invisible transition-all duration-300 font-semibold leading-normal z-[999] mb-4"
+        style="
+          background: linear-gradient(135deg, #8b0000, #a31515);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        "
+      >
+        <div
+          class="absolute top-full right-8 border-8 border-transparent"
+          style="border-top-color: #8b0000"
+        ></div>
+        Click me!
+      </div>
     </div>
 
     <script src="js/translations.js"></script>
