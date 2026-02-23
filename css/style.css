@@ -1,6 +1,29 @@
 /* Minimal Custom CSS for Tailwind Migration */
 /* Only animations and effects that are complex to do with pure Tailwind */
 
+/* Mobile responsiveness improvements */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  /* Contact items mobile adjustments */
+  .contact-item-icon {
+    font-size: 2rem !important;
+    min-width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .contact-item-text {
+    font-size: 0.875rem !important;
+  }
+}
+
 /* Scroll Animations */
 .scroll-animate {
   opacity: 0;
@@ -105,10 +128,6 @@
 
 /* Mobile-only section visibility */
 @media (max-width: 768px) {
-  .mobile-only-section {
-    display: block !important;
-  }
-
   .floating-contact-btn span:last-child {
     display: none;
   }
@@ -193,31 +212,46 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .mascot {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     bottom: 100px;
-    right: 20px;
-  }
-
-  .mascot-tooltip {
-    width: 200px;
-    font-size: 0.8rem;
-    padding: 10px 12px;
-    right: -10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .mascot {
-    width: 75px;
-    height: 75px;
-    bottom: 90px;
-    right: 15px;
+    right: 10px;
   }
 
   .mascot-tooltip {
     width: 180px;
     font-size: 0.75rem;
     padding: 8px 10px;
+    right: -10px;
+  }
+  
+  .floating-contact-btn {
+    bottom: 20px !important;
+    right: 10px !important;
+    width: 60px;
+    height: 60px;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mascot {
+    width: 70px;
+    height: 70px;
+    bottom: 90px;
+    right: 10px;
+  }
+
+  .mascot-tooltip {
+    width: 160px;
+    font-size: 0.7rem;
+    padding: 6px 8px;
+  }
+  
+  .floating-contact-btn {
+    bottom: 15px !important;
+    right: 10px !important;
+    width: 55px;
+    height: 55px;
   }
 }
