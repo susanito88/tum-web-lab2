@@ -217,7 +217,8 @@ const translations = {
 };
 
 // Language management
-let currentLanguage = localStorage.getItem("language") || "en";
+let currentLanguage =
+  localStorage.getItem("language") || navigator.language.split("-")[0] || "ro";
 
 function setLanguage(lang) {
   currentLanguage = lang;
