@@ -1,33 +1,66 @@
-# Molda - Moldovan Cuisine Restaurant Landing Page
+# Molda - Moldovan Cuisine Restaurant
 
-A professional landing page for a Moldovan restaurant specializing in traditional cuisine and special events hosting.
+A restaurant landing page built with **Astro** SSG + **Decap CMS** for Git-based content management. Deployed on Netlify.
 
-## 📋 Description
+## 🏗️ Stack (Lab 4)
 
-This landing page showcases "Molda", a Moldovan restaurant that hosts special events such as weddings, birthdays, corporate events, and anniversaries. The website features traditional Moldovan dishes and provides an easy way for clients to book their events.
+| Layer  | Choice                            | Why                                                |
+| ------ | --------------------------------- | -------------------------------------------------- |
+| SSG    | [Astro](https://astro.build)      | Near-zero JS, native Tailwind, easy HTML migration |
+| CMS    | [Decap CMS](https://decapcms.org) | Git-based, every edit = a commit, free on Netlify  |
+| CSS    | Tailwind CSS + custom animations  | Carried over from Lab 3                            |
+| Deploy | Netlify                           | Free tier, built-in Decap CMS auth                 |
+
+## 📁 Project Structure
+
+```
+src/
+  content/
+    settings/site.yaml   ← Hero, About, Contact, section titles
+    events/*.yaml        ← Wedding, Birthday, Corporate, Anniversary
+    menu/*.yaml          ← Mămăligă, Sarmale, Plăcintă, Mici, Zeamă, Cozonac
+  layouts/Layout.astro
+  components/            ← Nav, Hero, About, Events, Menu, Contact, Footer
+  pages/index.astro
+public/
+  admin/
+    config.yml           ← Decap CMS backend & collections
+    index.html           ← CMS entry point (/admin)
+  css/, js/, assets/
+netlify.toml
+```
+
+## 🚀 Local Development
+
+```bash
+npm install
+npm run dev        # → http://localhost:4321
+npm run build      # Build to dist/
+npm run preview    # Preview production build
+```
+
+## ✏️ CMS Setup (after deploying to Netlify)
+
+1. Push this repo to GitHub
+2. Connect the repo to Netlify (Build command: `npm run build`, Publish dir: `dist`)
+3. In Netlify → **Identity** → Enable Identity
+4. In Netlify → **Identity** → **Services** → Enable **Git Gateway**
+5. Visit `https://molda.me/admin` to access the CMS
+6. Invite yourself via the Identity panel
+
+Every save in the CMS creates a commit to `main`, which triggers a new deploy.
+
+## 🌍 Languages
+
+The site supports **English**, **Romanian**, and **Russian** via `public/js/translations.js`. The CMS manages the English content; the JS overrides text per language on the client.
 
 ## ✨ Features
 
-- **Multi-language Support**: English, Romanian, and Russian language options
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Smooth Scroll Animations**: Engaging animations as you scroll through sections
-- **Interactive Elements**:
-  - Fixed navigation bar with smooth scroll to sections
-  - Floating contact button that scrolls to the booking form
-  - Language selector
-- **5 Main Sections**:
-  1. **Hero Section**: Eye-catching introduction with call-to-action
-  2. **About**: Information about the restaurant and services
-  3. **Events**: Types of events hosted (weddings, birthdays, corporate, anniversaries)
-  4. **Menu**: Traditional Moldovan dishes (Mămăligă, Sarmale, Plăcintă, Cozonac)
-  5. **Contact**: Booking form and contact information
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup
-- **CSS3**: Custom styling with:
-  - CSS Variables for consistent theming
-  - Flexbox and Grid layouts
+- Multi-language support (EN / RO / RU)
+- Git-based CMS — all content editable without touching code
+- Scroll animations (Intersection Observer)
+- Fully responsive (Tailwind CSS)
+- Chef mascot + floating contact button
   - CSS animations and transitions
   - Media queries for responsiveness
 - **Vanilla JavaScript**: For interactive features (language switching, scroll animations, floating button)
