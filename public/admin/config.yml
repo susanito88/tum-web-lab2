@@ -1,0 +1,93 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
+
+# Required for Netlify Identity redirect
+site_url: https://molda.me
+
+collections:
+  # ─── Site Settings ──────────────────────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "Global Settings"
+        file: "src/content/settings/site.yaml"
+        fields:
+          # General
+          - { label: "Restaurant Name", name: restaurantName, widget: string }
+          - { label: "Tagline", name: tagline, widget: string }
+          # Hero
+          - { label: "Hero Title", name: heroTitle, widget: string }
+          - { label: "Hero Subtitle", name: heroSubtitle, widget: string }
+          - { label: "Hero Button Text", name: heroButtonText, widget: string }
+          - {
+              label: "Hero Background Image URL",
+              name: heroImageUrl,
+              widget: string,
+              hint: "Paste an Unsplash or full image URL",
+            }
+          # About
+          - { label: "About Section Title", name: aboutTitle, widget: string }
+          - { label: "About Paragraph 1", name: aboutText1, widget: text }
+          - { label: "About Paragraph 2", name: aboutText2, widget: text }
+          # Section headings
+          - { label: "Events Section Title", name: eventsTitle, widget: string }
+          - { label: "Menu Section Title", name: menuTitle, widget: string }
+          # Contact
+          - {
+              label: "Contact Section Title",
+              name: contactTitle,
+              widget: string,
+            }
+          - {
+              label: "Contact Card Subtitle",
+              name: contactSubtitle,
+              widget: string,
+            }
+          - { label: "Phone", name: phone, widget: string }
+          - { label: "Email", name: email, widget: string }
+          - { label: "Address", name: address, widget: string }
+          - { label: "Venue Capacity", name: capacity, widget: string }
+          - { label: "Instagram Handle", name: instagram, widget: string }
+          - { label: "Instagram URL", name: instagramUrl, widget: string }
+          # Footer
+          - { label: "Footer Text", name: footerText, widget: string }
+
+  # ─── Events ─────────────────────────────────────────────────────────────────
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    folder: "src/content/events"
+    extension: "yaml"
+    format: "yaml"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Description", name: description, widget: text }
+      - { label: "Display Order", name: order, widget: number, default: 0 }
+
+  # ─── Menu Items ─────────────────────────────────────────────────────────────
+  - name: "menu"
+    label: "Menu Items"
+    label_singular: "Menu Item"
+    folder: "src/content/menu"
+    extension: "yaml"
+    format: "yaml"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Dish Name", name: name, widget: string }
+      - { label: "Description", name: description, widget: text }
+      - label: "Animation Style"
+        name: animationClass
+        widget: select
+        options:
+          - { label: "Slide from Left", value: "scroll-slide-left" }
+          - { label: "Slide from Right", value: "scroll-slide-right" }
+        default: "scroll-slide-left"
+      - { label: "Display Order", name: order, widget: number, default: 0 }
