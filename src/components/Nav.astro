@@ -1,0 +1,45 @@
+---
+export interface Props {
+  restaurantName: string;
+}
+const { restaurantName } = Astro.props;
+---
+
+<nav class="fixed top-0 w-full bg-dark py-4 z-50 shadow-lg">
+  <div class="max-w-7xl mx-auto px-5 flex flex-wrap justify-between items-center gap-4">
+    <div class="text-4xl font-bold text-secondary font-script">{restaurantName}</div>
+    <ul class="flex list-none gap-8 flex-wrap justify-center">
+      <li>
+        <a href="#home" data-i18n="navHome"
+          class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary">Home</a>
+      </li>
+      <li>
+        <a href="#about" data-i18n="navAbout"
+          class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary">About</a>
+      </li>
+      <li>
+        <a href="#events" data-i18n="navEvents"
+          class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary">Events</a>
+      </li>
+      <li>
+        <a href="#menu" data-i18n="navMenu"
+          class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary">Menu</a>
+      </li>
+      <li>
+        <a href="#contact" data-i18n="navContact"
+          class="text-white no-underline text-lg transition-all duration-300 px-4 py-2 hover:text-secondary">Contact</a>
+      </li>
+    </ul>
+    <div class="flex gap-2 items-center">
+      <button
+        class="lang-option bg-transparent text-white border-2 border-secondary px-3 py-2 cursor-pointer text-sm font-semibold rounded transition-all duration-300 hover:bg-secondary hover:text-dark active"
+        data-lang="en">EN</button>
+      <button
+        class="lang-option bg-transparent text-white border-2 border-secondary px-3 py-2 cursor-pointer text-sm font-semibold rounded transition-all duration-300 hover:bg-secondary hover:text-dark"
+        data-lang="ro">RO</button>
+      <button
+        class="lang-option bg-transparent text-white border-2 border-secondary px-3 py-2 cursor-pointer text-sm font-semibold rounded transition-all duration-300 hover:bg-secondary hover:text-dark"
+        data-lang="ru">RU</button>
+    </div>
+  </div>
+</nav>

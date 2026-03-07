@@ -1,0 +1,31 @@
+---
+export interface EventItem {
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  eventsTitle: string;
+  events: EventItem[];
+}
+const { eventsTitle, events } = Astro.props;
+---
+
+<section id="events" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <h2
+      class="scroll-animate text-3xl sm:text-4xl md:text-5xl text-center mb-12 text-primary"
+      data-i18n="eventsTitle"
+    >
+      {eventsTitle}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+      {events.map((event) => (
+        <div class="event-card bg-light p-8 rounded-lg text-center transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-xl scroll-animate">
+          <h3 class="text-3xl mb-4 text-primary">{event.title}</h3>
+          <p class="text-lg text-gray-600 leading-relaxed">{event.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

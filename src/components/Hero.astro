@@ -1,0 +1,35 @@
+---
+export interface Props {
+  heroTitle: string;
+  heroSubtitle: string;
+  heroButtonText: string;
+  heroImageUrl: string;
+}
+const { heroTitle, heroSubtitle, heroButtonText, heroImageUrl } = Astro.props;
+---
+
+<section
+  id="home"
+  class="h-screen flex items-center justify-center text-center text-white mt-16 bg-cover bg-center md:bg-fixed"
+  style={`background: linear-gradient(rgba(44,24,16,0.65),rgba(44,24,16,0.65)), url("${heroImageUrl}");`}
+>
+  <div class="px-4">
+    <h1
+      data-i18n="heroTitle"
+      class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-secondary font-bold"
+      style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5)"
+    >
+      {heroTitle}
+    </h1>
+    <p data-i18n="heroSubtitle" class="text-xl sm:text-2xl md:text-3xl mb-8 text-light px-4">
+      {heroSubtitle}
+    </p>
+    <a
+      href="#contact"
+      data-i18n="heroButton"
+      class="inline-block bg-primary text-white px-8 sm:px-10 py-3 sm:py-4 text-lg sm:text-xl no-underline rounded border-2 border-primary cursor-pointer font-bold transition-all duration-300 hover:bg-transparent hover:border-secondary hover:text-secondary hover:-translate-y-1"
+    >
+      {heroButtonText}
+    </a>
+  </div>
+</section>
