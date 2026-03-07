@@ -1,0 +1,34 @@
+---
+export interface MenuItem {
+  name: string;
+  description: string;
+  animationClass: string;
+}
+
+export interface Props {
+  menuTitle: string;
+  items: MenuItem[];
+}
+const { menuTitle, items } = Astro.props;
+---
+
+<section id="menu" class="py-20 bg-dark text-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <h2
+      class="scroll-animate text-3xl sm:text-4xl md:text-5xl text-center mb-12 text-secondary"
+      data-i18n="menuTitle"
+    >
+      {menuTitle}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {items.map((item) => (
+        <div
+          class={`menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2 ${item.animationClass}`}
+        >
+          <h3 class="text-3xl mb-2 text-secondary">{item.name}</h3>
+          <p class="text-lg text-light">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

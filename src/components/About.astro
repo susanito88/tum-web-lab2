@@ -1,0 +1,35 @@
+---
+export interface Props {
+  aboutTitle: string;
+  aboutText1: string;
+  aboutText2: string;
+}
+const { aboutTitle, aboutText1, aboutText2 } = Astro.props;
+---
+
+<section id="about" class="py-20 bg-light">
+  <div class="max-w-7xl mx-auto px-5">
+    <h2
+      class="scroll-animate text-3xl sm:text-4xl md:text-5xl text-center mb-12 text-primary"
+      data-i18n="aboutTitle"
+    >
+      {aboutTitle}
+    </h2>
+    <div class="max-w-4xl mx-auto">
+      <div class="scroll-animate">
+        <p
+          data-i18n="aboutText1"
+          class="text-lg sm:text-xl mb-6 text-center text-dark leading-relaxed"
+        >
+          {aboutText1}
+        </p>
+        <p
+          data-i18n="aboutText2"
+          class="text-lg sm:text-xl mb-6 text-center text-dark leading-relaxed"
+        >
+          {aboutText2}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
