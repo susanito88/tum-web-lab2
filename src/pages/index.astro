@@ -11,13 +11,29 @@ import Mascot from '../components/Mascot.astro';
 import PageBehavior from '../components/PageBehavior.astro';
 import { getCollection, getEntry } from 'astro:content';
 
+function toPascalCase(value) {
+  return value
+    .split(/[^a-zA-Z0-9]+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('');
+}
+
 const siteEntry = await getEntry('settings', 'site');
 const site = siteEntry.data;
 
 const eventsRaw = await getCollection('events');
 const events = eventsRaw
   .sort((a, b) => a.data.order - b.data.order)
-  .map((e) => ({ title: e.data.title, description: e.data.description }));
+  .map((e) => {
+    const eventName = toPascalCase(e.id);
+    return {
+      title: e.data.title,
+      description: e.data.description,
+      titleI18nKey: `event${eventName}`,
+      descriptionI18nKey: `event${eventName}Desc`,
+    };
+  });
 
 const menuRaw = await getCollection('menu');
 const menuItems = menuRaw

@@ -2,6 +2,8 @@
 export interface EventItem {
   title: string;
   description: string;
+  titleI18nKey: string;
+  descriptionI18nKey: string;
 }
 
 export interface Props {
@@ -22,8 +24,8 @@ const { eventsTitle, events } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
       {events.map((event) => (
         <div class="event-card bg-light p-8 rounded-lg text-center transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-xl scroll-animate">
-          <h3 class="text-3xl mb-4 text-primary">{event.title}</h3>
-          <p class="text-lg text-gray-600 leading-relaxed">{event.description}</p>
+          <h3 class="text-3xl mb-4 text-primary" data-i18n={event.titleI18nKey}>{event.title}</h3>
+          <p class="text-lg text-gray-600 leading-relaxed" data-i18n={event.descriptionI18nKey}>{event.description}</p>
         </div>
       ))}
     </div>
