@@ -51,4 +51,19 @@ const menu = defineCollection({
   }),
 });
 
-export const collections = { settings, events, menu };
+const footer = defineCollection({
+  type: "data",
+  schema: z.object({
+    copyrightYear: z.number().default(2026),
+    contactButtonText: z.string(),
+  }),
+});
+
+const mascot = defineCollection({
+  type: "data",
+  schema: z.object({
+    tooltipText: z.string(),
+  }),
+});
+
+export const collections = { settings, events, menu, footer, mascot };

@@ -2,14 +2,16 @@
 export interface Props {
   restaurantName: string;
   footerText: string;
+  contactButtonText: string;
+  copyrightYear: number;
 }
-const { restaurantName, footerText } = Astro.props;
+const { restaurantName, footerText, contactButtonText, copyrightYear } = Astro.props;
 ---
 
 <footer class="bg-dark text-white text-center py-8">
   <div class="max-w-7xl mx-auto px-5">
     <p class="text-base">
-      &copy; 2026 {restaurantName} Restaurant.
+      &copy; {copyrightYear} {restaurantName} Restaurant.
       <span data-i18n="footerText">{footerText}</span>
     </p>
   </div>
@@ -23,5 +25,5 @@ const { restaurantName, footerText } = Astro.props;
   aria-label="Contact"
 >
   <span class="text-2xl flex items-center">✉</span>
-  <span class="font-serif whitespace-nowrap">Contactează-ne</span>
+  <span class="font-serif whitespace-nowrap">{contactButtonText}</span>
 </button>

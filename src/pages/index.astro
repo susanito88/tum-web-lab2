@@ -21,6 +21,10 @@ function toPascalCase(value) {
 
 const siteEntry = await getEntry('settings', 'site');
 const site = siteEntry.data;
+const footerEntry = await getEntry('footer', 'footer');
+const footer = footerEntry.data;
+const mascotEntry = await getEntry('mascot', 'mascot');
+const mascot = mascotEntry.data;
 
 const eventsRaw = await getCollection('events');
 const events = eventsRaw
@@ -38,7 +42,15 @@ const events = eventsRaw
 const menuRaw = await getCollection('menu');
 const menuItems = menuRaw
   .sort((a, b) => a.data.order - b.data.order)
-  .map((m) => ({ name: m.data.name, description: m.data.description, animationClass: m.data.animationClass }));
+  .map((m) => {
+    const menuName = toPascalCase(m.id);
+    return {
+      name: m.data.name,
+      description: m.data.description,
+      descriptionI18nKey: `menu${menuName}Desc`,
+      animationClass: m.data.animationClass,
+    };
+  });
 ---
 
 <Layout title={`${site.restaurantName} - ${site.tagline}`} description={site.heroSubtitle}>
@@ -66,7 +78,12 @@ const menuItems = menuRaw
     instagram={site.instagram}
     instagramUrl={site.instagramUrl}
   />
-  <Footer restaurantName={site.restaurantName} footerText={site.footerText} />
-  <Mascot />
+  <Footer
+    restaurantName={site.restaurantName}
+    footerText={site.footerText}
+    contactButtonText={footer.contactButtonText}
+    copyrightYear={footer.copyrightYear}
+  />
+  <Mascot tooltipText={mascot.tooltipText} />
   <PageBehavior />
 </Layout>

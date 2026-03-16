@@ -91,3 +91,24 @@ collections:
           - { label: "Slide from Right", value: "scroll-slide-right" }
         default: "scroll-slide-left"
       - { label: "Display Order", name: order, widget: number, default: 0 }
+
+  # ─── Footer Settings ───────────────────────────────────────────────────────
+  - name: "footer"
+    label: "Footer"
+    files:
+      - name: "footer"
+        label: "Footer Settings"
+        file: "src/content/footer/footer.yaml"
+        fields:
+          - { label: "Copyright Year", name: copyrightYear, widget: number, default: 2026 }
+          - { label: "Contact Floating Button Text", name: contactButtonText, widget: string }
+
+  # ─── Mascot Settings ───────────────────────────────────────────────────────
+  - name: "mascot"
+    label: "Mascot"
+    files:
+      - name: "mascot"
+        label: "Mascot Settings"
+        file: "src/content/mascot/mascot.yaml"
+        fields:
+          - { label: "Tooltip Text", name: tooltipText, widget: string }

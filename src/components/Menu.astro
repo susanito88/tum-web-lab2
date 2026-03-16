@@ -2,6 +2,7 @@
 export interface MenuItem {
   name: string;
   description: string;
+  descriptionI18nKey: string;
   animationClass: string;
 }
 
@@ -26,7 +27,7 @@ const { menuTitle, items } = Astro.props;
           class={`menu-item bg-light/10 p-8 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:bg-light/15 hover:translate-x-2 ${item.animationClass}`}
         >
           <h3 class="text-3xl mb-2 text-secondary">{item.name}</h3>
-          <p class="text-lg text-light">{item.description}</p>
+          <p class="text-lg text-light" data-i18n={item.descriptionI18nKey}>{item.description}</p>
         </div>
       ))}
     </div>
