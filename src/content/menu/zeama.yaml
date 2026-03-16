@@ -2,3 +2,4 @@ name: "Zeamă"
 description: "Traditional chicken soup with homemade noodles"
 animationClass: "scroll-slide-left"
 order: 5
+hidden: false

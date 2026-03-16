@@ -38,6 +38,7 @@ const events = defineCollection({
     title: z.string(),
     description: z.string(),
     order: z.number().default(0),
+    hidden: z.boolean().default(false),
   }),
 });
 
@@ -48,6 +49,7 @@ const menu = defineCollection({
     description: z.string(),
     animationClass: z.string().default("scroll-slide-left"),
     order: z.number().default(0),
+    hidden: z.boolean().default(false),
   }),
 });
 

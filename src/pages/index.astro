@@ -28,6 +28,7 @@ const mascot = mascotEntry.data;
 
 const eventsRaw = await getCollection('events');
 const events = eventsRaw
+  .filter((e) => !e.data.hidden)
   .sort((a, b) => a.data.order - b.data.order)
   .map((e) => {
     const eventName = toPascalCase(e.id);
@@ -41,6 +42,7 @@ const events = eventsRaw
 
 const menuRaw = await getCollection('menu');
 const menuItems = menuRaw
+  .filter((m) => !m.data.hidden)
   .sort((a, b) => a.data.order - b.data.order)
   .map((m) => {
     const menuName = toPascalCase(m.id);

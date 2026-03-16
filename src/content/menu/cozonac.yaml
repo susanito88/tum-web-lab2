@@ -2,3 +2,4 @@ name: "Cozonac"
 description: "Sweet bread with walnuts or cocoa for special occasions"
 animationClass: "scroll-slide-right"
 order: 6
+hidden: false

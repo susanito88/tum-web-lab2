@@ -2,3 +2,4 @@ name: "Mămăligă"
 description: "Traditional cornmeal porridge served with sour cream and cheese"
 animationClass: "scroll-slide-left"
 order: 1
+hidden: false
