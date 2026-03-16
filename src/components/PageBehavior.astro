@@ -1,0 +1,19 @@
+<script>
+  const contactBtn = document.getElementById('contactFloatingBtn');
+  contactBtn?.addEventListener('click', () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('animate-visible');
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  document
+    .querySelectorAll('.scroll-animate, .scroll-fade, .scroll-slide-left, .scroll-slide-right')
+    .forEach((el) => observer.observe(el));
+</script>
