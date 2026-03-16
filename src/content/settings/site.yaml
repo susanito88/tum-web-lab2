@@ -1,26 +1,25 @@
-restaurantName: "Molda"
-tagline: "Bringing Moldovan traditions to your celebrations."
-
-heroTitle: "Celebrate Your Special Moments"
-heroSubtitle: "Authentic Moldovan Cuisine for Unforgettable Events"
-heroButtonText: "Book Your Event"
-heroImageUrl: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1920&auto=format&fit=crop"
-
-aboutTitle: "About Molda"
-aboutText1: "Welcome to Molda, where traditional Moldovan hospitality meets exceptional event planning. We specialize in hosting memorable celebrations - from intimate birthdays to grand weddings and corporate gatherings."
-aboutText2: "Our spacious venue accommodates 20-100 guests, and our experienced team ensures every detail of your event is perfect. We bring the authentic flavors of Moldova to your celebration with traditional dishes prepared by our master chefs."
-
-eventsTitle: "Events We Host"
-
-menuTitle: "Traditional Menu Highlights"
-
-contactTitle: "Book Your Event"
-contactSubtitle: "Get in Touch"
-phone: "+373 (67) 115-555"
-email: "events@molda.md"
-address: "Strada Pandurilor 50, Chisinau, Moldova 2002"
-capacity: "20-100 guests"
+restaurantName: Molda
+tagline: Bringing Moldovan traditions to your celebrations.
+heroTitle: Celebrate Your Special Moments
+heroSubtitle: Authentic Moldovan Cuisine for Unforgettable Events
+heroButtonText: Book Your Event!
+heroImageUrl: https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1920&auto=format&fit=crop
+aboutTitle: About Molda
+aboutText1: Welcome to Molda, where traditional Moldovan hospitality meets
+  exceptional event planning. We specialize in hosting memorable celebrations -
+  from intimate birthdays to grand weddings and corporate gatherings.
+aboutText2: Our spacious venue accommodates 20-100 guests, and our experienced
+  team ensures every detail of your event is perfect. We bring the authentic
+  flavors of Moldova to your celebration with traditional dishes prepared by our
+  master chefs.
+eventsTitle: Events We Host
+menuTitle: Traditional Menu Highlights
+contactTitle: Book Your Event
+contactSubtitle: Get in Touch
+phone: +373 (67) 115-555
+email: events@molda.md
+address: Strada Pandurilor 50, Chisinau, Moldova 2002
+capacity: 20-100 guests
 instagram: "@molda_restaurant"
-instagramUrl: "https://www.instagram.com/molda_restaurant"
-
-footerText: "Bringing Moldovan traditions to your celebrations."
+instagramUrl: https://www.instagram.com/molda_restaurant
+footerText: Bringing Moldovan traditions to your celebrations.
